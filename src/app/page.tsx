@@ -1,95 +1,49 @@
-import Image from 'next/image'
-import styles from './page.module.css'
-
+import styles from "./page.module.css";
+import Banner from "@/components/Banner";
+import ProductCard from "@/components/ProductCard";
+const des_1 =
+  "Vaccination is a simple, safe, and effective way of protecting you against harmful diseases, before you come into contact with them. It uses your body’s natural defenses to build resistance to specific infections and makes your immune system stronger.";
+const des_2 =
+  "In today’s world, infectious diseases can easily cross borders, and infect anyone who is not protected. Two key reasons to get vaccinated are to protect ourselves and to protect those around us";
+const des_3 =
+  "Like any medicine, vaccines can cause mild side effects, such as a low-grade fever, or pain or redness at the injection site. Mild reactions go away within a few days on their own.Severe or long-lasting side effects are extremely rare.";
+const des_4 =
+  "In most countries you will be given a vaccination card that tells you what vaccines you or your child have had and when the next vaccines or booster doses are due. It is important to make sure that all these vaccines are up to date.";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+      <Banner />
+      <div
+        style={{
+          margin: "20px",
+          display: "flex",
+          flexDirection: "row",
+          alignContent: "space-around",
+          justifyContent: "space-around",
+          flexWrap: "wrap",
+        }}
+      >
+        <ProductCard
+          pic="/img/card1.jpg"
+          title="What is vaccination ?"
+          message={des_1}
+        />
+        <ProductCard
+          pic="/img/card2.jpg"
+          title="Why should I get vaccinated ?"
+          message={des_2}
+        />
+        <ProductCard
+          pic="/img/card3.jpg"
+          title="Side effects of vaccines?"
+          message={des_3}
+        />
+        <ProductCard
+          pic="/img/card4.jpeg"
+          title="When should I get vaccinated ?"
+          message={des_4}
         />
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
     </main>
-  )
+  );
 }
