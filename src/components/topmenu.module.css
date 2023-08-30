@@ -1,0 +1,36 @@
+.menycontainer{
+    height: 30px;
+    background-color: white;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 30;
+    border-top: 1px solid lightgrey;
+    border-bottom: 2px solid lightgrey;
+    display: flex;
+    flex-direction: row;
+}
+.logoimg{
+    height: 100%;
+    width: auto;
+}
+
+.itemcontainer {
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 1%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10pt;
+    color: gray;
+    border: 1px solid grey;
+    border-radius: 12px;
+}
+.itemcontainer:hover{
+    background-color: rgba(255, 253, 208, 0.794);
+}

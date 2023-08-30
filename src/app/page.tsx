@@ -2,13 +2,11 @@ import styles from "./page.module.css";
 import Banner from "@/components/Banner";
 import ProductCard from "@/components/ProductCard";
 const des_1 =
-  "Vaccination is a simple, safe, and effective way of protecting you against harmful diseases, before you come into contact with them. It uses your body’s natural defenses to build resistance to specific infections and makes your immune system stronger.";
+  "King Chulalongkorn Memorial Hospital is a public general and tertiary referral hospital in Bangkok, Thailand. It is operated by the Thai Red Cross Society, and serves as the teaching hospital for the Faculty of Medicine, Chulalongkorn University and Srisavarindhira Thai Red Cross Institute of Nursing.";
 const des_2 =
-  "In today’s world, infectious diseases can easily cross borders, and infect anyone who is not protected. Two key reasons to get vaccinated are to protect ourselves and to protect those around us";
+  "Rajavithi Hospital is large public hospital located in Ratchathewi District, Bangkok, Thailand. It was founded in 1951 as the Women's Hospital, and is operated by the Ministry of Public Health's Department of Medical Services. With an inpatient capacity of 1,200 beds, it is one of the largest hospitals in Thailand. It serves as a teaching hospital for the College of Medicine, Rangsit University.";
 const des_3 =
-  "Like any medicine, vaccines can cause mild side effects, such as a low-grade fever, or pain or redness at the injection site. Mild reactions go away within a few days on their own.Severe or long-lasting side effects are extremely rare.";
-const des_4 =
-  "In most countries you will be given a vaccination card that tells you what vaccines you or your child have had and when the next vaccines or booster doses are due. It is important to make sure that all these vaccines are up to date.";
+  "Thammasat University Hospital is a public hospital subsidiary to the Office of the Rector, Thammasat University, Ministry of Education. It is located in the Rangsit Campus, Pathum Thani Province, Thailand.";
 export default function Home() {
   return (
     <main className={styles.main}>
@@ -24,24 +22,19 @@ export default function Home() {
         }}
       >
         <ProductCard
-          pic="/img/card1.jpg"
-          title="What is vaccination ?"
+          pic="/img/chula.jpg"
+          title="Chulalongkorn Hospital"
           message={des_1}
         />
         <ProductCard
-          pic="/img/card2.jpg"
-          title="Why should I get vaccinated ?"
+          pic="/img/rajavithi.jpg"
+          title="Rajavithi Hospital"
           message={des_2}
         />
         <ProductCard
-          pic="/img/card3.jpg"
-          title="Side effects of vaccines?"
+          pic="/img/thammasat.jpg"
+          title="Thammasat University Hospital"
           message={des_3}
-        />
-        <ProductCard
-          pic="/img/card4.jpeg"
-          title="When should I get vaccinated ?"
-          message={des_4}
         />
       </div>
     </main>
