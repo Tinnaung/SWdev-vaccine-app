@@ -9,7 +9,7 @@ export default function Banner() {
         <h1 className="text-9xl font-medium object-contain ">
           Get your vaccine !
         </h1>
-        <h3 className="text-3xl font-serif mt-5 object-contain ">
+        <h3 className="text-3xl font-sans mt-5 object-contain ">
           an important part of protecting yourself
         </h3>
       </div>
