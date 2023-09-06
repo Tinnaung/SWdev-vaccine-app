@@ -1,5 +1,6 @@
 import styles from "./productcard.module.css";
 import Image from "next/image";
+import InteractiveCard from "./InteractiveCard";
 
 interface Data_props {
   pic: string;
@@ -8,7 +9,7 @@ interface Data_props {
 }
 export default function ProductCard({ pic, title, message }: Data_props) {
   return (
-    <div className="w-1/5 h-[300px] rounded-lg shadow-lg overflow-y-auto hover:bg-neutral-200 hover:border-neutral-900">
+    <InteractiveCard contentName={title}>
       <div className="w-full h-[60%] relative rounded-t-lg">
         <Image
           src={pic}
@@ -21,6 +22,6 @@ export default function ProductCard({ pic, title, message }: Data_props) {
         {title}
       </div>
       <div className={styles.describtion}>{message}</div>
-    </div>
+    </InteractiveCard>
   );
 }
