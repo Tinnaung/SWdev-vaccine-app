@@ -1,5 +1,6 @@
 import styles from "./page.module.css";
 import Banner from "@/components/Banner";
+import CardPanel from "@/components/CardPanel";
 import ProductCard from "@/components/ProductCard";
 const des_1 =
   "King Chulalongkorn Memorial Hospital is a public general and tertiary referral hospital in Bangkok, Thailand. It is operated by the Thai Red Cross Society, and serves as the teaching hospital for the Faculty of Medicine, Chulalongkorn University and Srisavarindhira Thai Red Cross Institute of Nursing.";
@@ -11,32 +12,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Banner />
-      <div
-        style={{
-          margin: "20px",
-          display: "flex",
-          flexDirection: "row",
-          alignContent: "space-around",
-          justifyContent: "space-around",
-          flexWrap: "wrap",
-        }}
-      >
-        <ProductCard
-          pic="/img/chula.jpg"
-          title="Chulalongkorn Hospital"
-          message={des_1}
-        />
-        <ProductCard
-          pic="/img/rajavithi.jpg"
-          title="Rajavithi Hospital"
-          message={des_2}
-        />
-        <ProductCard
-          pic="/img/thammasat.jpg"
-          title="Thammasat University Hospital"
-          message={des_3}
-        />
-      </div>
+      <CardPanel />
     </main>
   );
 }
