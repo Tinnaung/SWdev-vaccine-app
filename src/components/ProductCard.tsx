@@ -11,7 +11,7 @@ interface Data_props {
   title: string;
   message: string;
   onCompare: Function;
-  ratingParent : number;
+  ratingParent: number;
 }
 export default function ProductCard({
   pic,
@@ -20,7 +20,9 @@ export default function ProductCard({
   onCompare,
   ratingParent,
 }: Data_props) {
-  const [value, setValue] = React.useState<number | null>(2);
+
+  // const [value, setValue] = React.useState<number | null>(2);
+
   return (
     <InteractiveCard contentName={title}>
       <div className="w-full h-[60%] relative rounded-t-lg">
@@ -39,9 +41,12 @@ export default function ProductCard({
           name="simple-controlled"
           value={ratingParent}
           onChange={(event, newValue) => {
-            //setValue(newValue);
-            //event.stopPropagation();
+            // event.preventDefault();
+            // setValue(newValue);
             onCompare(title, newValue);
+          }}
+          onClick={(e) => {
+            e.stopPropagation();
           }}
         />
       </div>
