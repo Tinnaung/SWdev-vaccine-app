@@ -6,22 +6,20 @@ import InteractiveCard from "./InteractiveCard";
 import Rating from "@mui/material/Rating";
 import * as React from "react";
 
-interface Data_props {
-  pic: string;
-  title: string;
-  message: string;
-  onCompare: Function;
-  ratingParent: number;
-}
+// interface Data_props {
+//   pic: string;
+//   title: string;
+//   // message: string;
+//   onCompare: Function;
+//   ratingParent: number;
+// }
 export default function ProductCard({
   pic,
   title,
-  message,
+  // message,
   onCompare,
   ratingParent,
-}: Data_props) {
-
-  // const [value, setValue] = React.useState<number | null>(2);
+}: {pic:string,title:string,onCompare?:Function,ratingParent?:number}) {
 
   return (
     <InteractiveCard contentName={title}>
@@ -36,22 +34,21 @@ export default function ProductCard({
       <div className="w-full h-[15%] p-[15px] text-center font-semibold font-sans mt-6">
         {title}
       </div>
-      <div className="mb-4 mt-4 w-full text-center">
+      {onCompare?       <div className="mb-4 mt-4 w-full text-center">
         <Rating
           name="simple-controlled"
           value={ratingParent}
           onChange={(event, newValue) => {
-            // event.preventDefault();
-            // setValue(newValue);
             onCompare(title, newValue);
           }}
           onClick={(e) => {
             e.stopPropagation();
           }}
         />
-      </div>
+      </div> : ""}
 
-      <div className={styles.describtion}>{message}</div>
+
+      {/* <div className={styles.describtion}>{message}</div> */}
     </InteractiveCard>
   );
 }

@@ -74,7 +74,7 @@ export default function CardPanel() {
           <ProductCard
             title={hosItem.name}
             pic={hosItem.image}
-            message={hosItem.message}
+            // message={hosItem.message}
             onCompare={(hos: string, rate: number) =>
               dispatchCompare({ type: "change", hosName: hos, rating: rate })
             }
