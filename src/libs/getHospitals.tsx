@@ -1,9 +1,10 @@
 
 export default async function getHospitals() {
   //timeout
-  await new Promise((resolve) => setTimeout(resolve,5000))
+  await new Promise((resolve) => setTimeout(resolve,0))
   //
-  const response = await fetch("http:localhost:5001/api/v1/hospitals");
+  const URL = "http://localhost:5001/api/v1/hospitals";
+  const response = await fetch(URL);
   if (!response.ok) {
     throw new Error("Falied to fetch hospitals");
   }
