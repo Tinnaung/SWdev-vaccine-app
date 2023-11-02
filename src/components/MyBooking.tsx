@@ -4,7 +4,7 @@ import { AppDispatch,useAppSelector } from "@/redux/store"
 import { useDispatch } from "react-redux"
 
 export default function MyBooking() {
-    const bookingItem= useAppSelector((state) => state.bookSlice.bookingItem)
+    const bookingItem= useAppSelector((state) => state.reducer.bookSlice.bookingItem)
     const dispatch = useDispatch<AppDispatch>()
     if(!bookingItem){
         return (<div className="text-xl text-center mt-8">No vaccine booking</div>)
