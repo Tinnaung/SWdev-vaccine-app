@@ -7,29 +7,30 @@ import { useReducer } from "react";
 
 export default async function HospitalCatalog({hospitalJson} : {hospitalJson:Object}){
     //onCompare
-    const compareReducer = (
-        RatingMap: Map<string, number>,
-        action: { type: string; hosName: string; rating: number }
-      ) => {
-        switch (action.type) {
-          case "change": {
-            return new Map(RatingMap.set(action.hosName, action.rating));
-          }
-          case "delete": {
-            RatingMap.delete(action.hosName);
-            // console.log("after delete", new Map(RatingMap));
+    // const compareReducer = (
+    //     RatingMap: Map<string, number>,
+    //     action: { type: string; hosName: string; rating: number }
+    //   ) => {
+    //     switch (action.type) {
+    //       case "change": {
+    //         return new Map(RatingMap.set(action.hosName, action.rating));
+    //       }
+    //       case "delete": {
+    //         RatingMap.delete(action.hosName);
+    //         // console.log("after delete", new Map(RatingMap));
     
-            return new Map(RatingMap);
-          }
-          default:
-            return RatingMap;
-        }
-      };
+    //         return new Map(RatingMap);
+    //       }
+    //       default:
+    //         return RatingMap;
+    //     }
+    //   };
     
-    const [RatingMap, dispatchCompare] = useReducer(
-        compareReducer,
-        new Map<string, number>()
-    );
+    // const [RatingMap, dispatchCompare] = useReducer(
+    //     compareReducer,
+    //     new Map<string, number>()
+    // );
+    
     const hosJsonReady = await hospitalJson
     return (
         <>
@@ -51,15 +52,15 @@ export default async function HospitalCatalog({hospitalJson} : {hospitalJson:Obj
             title={hosItem.name}
             pic={hosItem.picture}
             // message={hosItem.message}
-            onCompare={(hos: string, rate: number) =>
-              dispatchCompare({ type: "change", hosName: hos, rating: rate })
-            }
-            ratingParent={RatingMap.get(hosItem.name) || 0}
+            // onCompare={(hos: string, rate: number) =>
+            //   dispatchCompare({ type: "change", hosName: hos, rating: rate })
+            // }
+            // ratingParent={RatingMap.get(hosItem.name) || 0}
           />
         </Link>
       ))}
       </div>
-      <div className="w-full text-xl font-medium mt-16 pt-4">
+      {/* <div className="w-full text-xl font-medium mt-16 pt-4">
         {Array.from(RatingMap).map(([hosMap, valueMap]) => (
           <div
             key={hosMap}
@@ -75,7 +76,7 @@ export default async function HospitalCatalog({hospitalJson} : {hospitalJson:Obj
             {hosMap} Rating = {valueMap}
           </div>
         ))}
-      </div>
+      </div> */}
         </>
     );
 }
